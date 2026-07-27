@@ -223,6 +223,6 @@
     height: 185px;
   }
   .scrollIndicator {
-    display: none;
+    bottom: 12px;
   }
 }
