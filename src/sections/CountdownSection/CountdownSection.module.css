@@ -1,0 +1,175 @@
+.countdownSection {
+  position: relative;
+  padding: var(--spacing-xl) 0;
+  background-color: transparent;
+  z-index: 2;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.cardContainer {
+  max-width: 680px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.timerGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-md);
+  width: 100%;
+}
+
+.timeCard {
+  background: var(--color-surface);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-lg) var(--spacing-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-sm);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
+}
+
+.timeCard:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-primary-soft);
+  box-shadow: 0 8px 24px rgba(255, 126, 182, 0.15);
+}
+
+.number {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-3xl);
+  color: var(--color-primary-soft);
+  font-weight: 700;
+  line-height: 1;
+  text-shadow: 0 0 12px rgba(255, 126, 182, 0.3);
+}
+
+.label {
+  font-family: var(--font-body);
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  color: var(--color-muted);
+  letter-spacing: 2px;
+  font-weight: 600;
+  margin-top: var(--spacing-xs);
+}
+
+/* Celebration mode styles */
+.celebrationMessage {
+  text-align: center;
+  padding: var(--spacing-xl) var(--spacing-lg);
+  background: var(--color-surface);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg), 0 0 24px rgba(255, 126, 182, 0.15);
+  animation: pulse-soft 3s ease-in-out infinite;
+}
+
+.celebrationText {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-2xl);
+  color: var(--color-primary-soft);
+  margin-bottom: var(--spacing-sm);
+  letter-spacing: 0.5px;
+}
+
+.ageText {
+  font-family: var(--font-body);
+  font-size: var(--font-size-lg);
+  color: var(--color-cream);
+  opacity: 0.9;
+}
+
+@keyframes pulse-soft {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: var(--shadow-lg), 0 0 24px rgba(255, 126, 182, 0.15);
+  }
+  50% {
+    transform: scale(1.01);
+    box-shadow: var(--shadow-lg), 0 0 32px rgba(255, 126, 182, 0.25);
+  }
+}
+
+@media (max-width: 600px) {
+  .timerGrid {
+    gap: var(--spacing-xs);
+  }
+  
+  .timeCard {
+    padding: var(--spacing-md) var(--spacing-xs);
+  }
+  
+  .number {
+    font-size: var(--font-size-xl);
+  }
+  
+  .label {
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+}
+
+/* Teaser & Unlock button styles */
+.lockBanner {
+  margin-top: var(--spacing-xl);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-sm);
+  text-align: center;
+}
+
+.teaserText {
+  font-family: var(--font-body);
+  font-size: var(--font-size-sm);
+  color: var(--color-muted);
+  max-width: 540px;
+  line-height: 1.6;
+  text-wrap: balance;
+}
+
+.unlockBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: 10px 24px;
+  background: linear-gradient(135deg, var(--color-primary) 0%, #ff529c 100%);
+  color: var(--color-background);
+  font-family: var(--font-body);
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  border-radius: var(--radius-full);
+  box-shadow: 0 4px 16px rgba(255, 126, 182, 0.35);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  border: none;
+  cursor: pointer;
+}
+
+.unlockBtn:hover,
+.unlockBtn:focus-visible {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 20px rgba(255, 126, 182, 0.5);
+}
+
+.unlockedBadge {
+  margin-top: var(--spacing-md);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: 8px 18px;
+  background: rgba(255, 193, 217, 0.12);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  font-family: var(--font-body);
+  font-size: var(--font-size-xs);
+  color: var(--color-primary-soft);
+}

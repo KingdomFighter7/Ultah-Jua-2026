@@ -1,0 +1,165 @@
+.bgContainer {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -10;
+  pointer-events: none;
+  overflow: hidden;
+  background-color: var(--color-background);
+}
+
+/* 1. Large Soft Floating Ambient Orbs */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  will-change: transform;
+}
+
+.orb1 {
+  width: 50vw;
+  height: 50vh;
+  top: -10%;
+  left: -10%;
+  background: radial-gradient(circle, rgba(255, 126, 182, 0.09) 0%, transparent 80%);
+  animation: floatOrb1 40s infinite ease-in-out alternate;
+}
+
+.orb2 {
+  width: 60vw;
+  height: 60vh;
+  bottom: -15%;
+  right: -10%;
+  background: radial-gradient(circle, rgba(217, 160, 174, 0.08) 0%, transparent 80%);
+  animation: floatOrb2 50s infinite ease-in-out alternate;
+}
+
+.orb3 {
+  width: 45vw;
+  height: 45vh;
+  top: 35%;
+  left: 45%;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.06) 0%, transparent 80%);
+  animation: floatOrb3 45s infinite ease-in-out alternate;
+}
+
+/* 2. Thin Orbiting Concentric Circles */
+.orbit {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 193, 217, 0.035);
+  pointer-events: none;
+  transform-style: preserve-3d;
+}
+
+.orbit1 {
+  width: 75vw;
+  height: 75vw;
+  max-width: 900px;
+  max-height: 900px;
+  top: 15%;
+  left: -20%;
+  transform: rotateX(75deg) rotateY(15deg);
+  animation: spinSlow 180s linear infinite;
+}
+
+.orbit2 {
+  width: 85vw;
+  height: 85vw;
+  max-width: 1100px;
+  max-height: 1100px;
+  bottom: -10%;
+  right: -25%;
+  border-style: dashed;
+  border-color: rgba(217, 160, 174, 0.025);
+  transform: rotateX(65deg) rotateY(-10deg);
+  animation: spinSlowReverse 220s linear infinite;
+}
+
+/* 3. Twinkling Star Field */
+.starField {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.star {
+  position: absolute;
+  background-color: var(--color-cream);
+  border-radius: 50%;
+  opacity: 0.25;
+  box-shadow: 0 0 4px var(--color-primary-soft);
+  will-change: opacity, transform;
+}
+
+.twinkle {
+  animation: starTwinkle 3s infinite ease-in-out;
+}
+
+/* GPU Keyframe Animations */
+@keyframes floatOrb1 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(10vw, 5vh) scale(1.1);
+  }
+  100% {
+    transform: translate(-5vw, 15vh) scale(0.95);
+  }
+}
+
+@keyframes floatOrb2 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-8vw, -10vh) scale(0.9);
+  }
+  100% {
+    transform: translate(5vw, 5vh) scale(1.15);
+  }
+}
+
+@keyframes floatOrb3 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(12vw, -5vh) scale(1.05);
+  }
+  100% {
+    transform: translate(-10vw, 8vh) scale(0.9);
+  }
+}
+
+@keyframes spinSlow {
+  0% {
+    transform: rotateX(75deg) rotateY(15deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateX(75deg) rotateY(15deg) rotateZ(360deg);
+  }
+}
+
+@keyframes spinSlowReverse {
+  0% {
+    transform: rotateX(65deg) rotateY(-10deg) rotateZ(360deg);
+  }
+  100% {
+    transform: rotateX(65deg) rotateY(-10deg) rotateZ(0deg);
+  }
+}
+
+@keyframes starTwinkle {
+  0%, 100% {
+    opacity: 0.15;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 0.75;
+    transform: scale(1.2);
+  }
+}

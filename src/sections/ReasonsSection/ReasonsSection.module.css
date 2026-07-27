@@ -1,0 +1,196 @@
+.section {
+  position: relative;
+  padding: var(--spacing-2xl) 0;
+  background-color: transparent;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  z-index: 2;
+}
+
+.carouselContainer {
+  position: relative;
+  width: 100%;
+  outline: none;
+  padding: var(--spacing-sm) 0 var(--spacing-xl) 0;
+}
+
+.trackWrapper {
+  width: 100%;
+  overflow: hidden;
+  cursor: grab;
+  padding: 12px 0; /* Ruang tambahan agar efek glow/shadow kartu tidak terpotong */
+  margin: -12px 0;  /* Mengompensasi padding vertikal */
+}
+
+.trackWrapper:active {
+  cursor: grabbing;
+}
+
+.track {
+  display: flex;
+  will-change: transform;
+}
+
+.cardFrame {
+  padding: 0 var(--spacing-sm);
+  display: flex;
+  box-sizing: border-box;
+}
+
+.card {
+  background: var(--color-surface);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg) var(--spacing-md); /* Dioptimalkan agar teks memiliki lebih banyak ruang vertikal */
+  min-height: 280px; /* Ditambah agar teks panjang muat sempurna tanpa terpotong */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.card:hover {
+  border-color: var(--color-primary-soft);
+  box-shadow: 0 8px 32px rgba(255, 126, 182, 0.15), var(--shadow-glow);
+}
+
+.cardIndex {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-lg);
+  color: var(--color-primary);
+  opacity: 0.18;
+  position: absolute;
+  top: 20px;
+  left: 24px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.cardTitle {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-xl);
+  color: var(--color-primary-soft);
+  margin-top: var(--spacing-sm);
+  margin-bottom: var(--spacing-xs);
+  font-weight: 600;
+}
+
+.cardText {
+  font-family: var(--font-body);
+  font-size: var(--font-size-sm);
+  color: var(--color-muted);
+  line-height: 1.6;
+}
+
+.cardGlow {
+  position: absolute;
+  bottom: -30px;
+  right: -30px;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, rgba(255, 126, 182, 0.06) 0%, transparent 70%);
+  filter: blur(15px);
+  pointer-events: none;
+}
+
+/* Navigasi Tombol */
+.navBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--color-surface-strong);
+  border: 1px solid var(--color-border);
+  color: var(--color-primary-soft);
+  transition: background var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
+  cursor: pointer;
+  z-index: 5;
+}
+
+.navBtn:hover,
+.navBtn:focus-visible {
+  background: var(--color-primary);
+  color: var(--color-background);
+  transform: translateY(-50%) scale(1.05);
+}
+
+.navBtn:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.prevBtn {
+  left: -20px;
+}
+
+.nextBtn {
+  right: -20px;
+}
+
+/* Indicators */
+.dotsIndicator {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: var(--spacing-lg);
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background: var(--color-border);
+  border: none;
+  cursor: pointer;
+  transition: width var(--transition-fast), background-color var(--transition-fast);
+}
+
+.dot:hover,
+.dot:focus-visible {
+  background-color: var(--color-primary-soft);
+}
+
+.activeDot {
+  width: 20px;
+  background-color: var(--color-primary);
+}
+
+/* Responsivitas Layar */
+@media (max-width: 1024px) {
+  .prevBtn {
+    left: -10px;
+  }
+  .nextBtn {
+    right: -10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .carouselContainer {
+    padding: var(--spacing-sm) var(--spacing-xs) var(--spacing-lg) var(--spacing-xs);
+  }
+  
+  .prevBtn,
+  .nextBtn {
+    display: none; /* Swipe/drag menjadi navigasi utama di mobile */
+  }
+  
+  .cardFrame {
+    padding: 0 6px; /* Biar pinggiran kartu sebelah terlihat sedikit */
+  }
+  
+  .card {
+    min-height: 220px;
+    padding: var(--spacing-lg) var(--spacing-sm);
+  }
+}

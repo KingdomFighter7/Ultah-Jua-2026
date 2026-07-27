@@ -1,0 +1,127 @@
+.floatingWrapper {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  z-index: 9999;
+}
+
+.mainBtn {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, var(--color-primary) 0%, #ff529c 100%);
+  color: var(--color-background);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 16px rgba(255, 126, 182, 0.4);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  border: none;
+  cursor: pointer;
+}
+
+.mainBtn:hover,
+.mainBtn:focus-visible {
+  transform: scale(1.08);
+  box-shadow: 0 6px 20px rgba(255, 126, 182, 0.6), var(--shadow-glow);
+}
+
+.mainBtn:active {
+  transform: scale(0.95);
+}
+
+.miniBtn {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  background: var(--color-surface-strong);
+  border: 1px solid var(--color-border);
+  color: var(--color-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-fast), background var(--transition-fast), color var(--transition-fast);
+  cursor: pointer;
+}
+
+.miniBtn:hover,
+.miniBtn:focus-visible {
+  transform: scale(1.05);
+  background: var(--color-surface);
+  color: var(--color-primary-soft);
+  border-color: var(--color-primary-soft);
+}
+
+.subButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Waveform Animasi Kecil */
+.playingIndicator {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 18px;
+  height: 18px;
+}
+
+.bar {
+  width: 3px;
+  height: 100%;
+  background-color: var(--color-background);
+  border-radius: 1px;
+  transform-origin: bottom;
+  animation: wave 1.2s ease-in-out infinite alternate;
+}
+
+.bar:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.bar:nth-child(2) {
+  animation-delay: 0.4s;
+  height: 70%;
+}
+
+.bar:nth-child(3) {
+  animation-delay: 0.2s;
+  height: 40%;
+}
+
+@keyframes wave {
+  0% {
+    transform: scaleY(0.25);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+.playIcon {
+  margin-left: 2px; /* Keselarasan visual segitiga play */
+}
+
+/* Responsivitas: perkecil sedikit di mobile */
+@media (max-width: 768px) {
+  .floatingWrapper {
+    bottom: 16px;
+    right: 16px;
+  }
+  
+  .mainBtn {
+    width: 46px;
+    height: 46px;
+  }
+  
+  .miniBtn {
+    width: 36px;
+    height: 36px;
+  }
+}

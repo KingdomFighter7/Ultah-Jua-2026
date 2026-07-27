@@ -1,0 +1,293 @@
+.songSection {
+  position: relative;
+  padding: var(--spacing-2xl) 0;
+  background-color: transparent;
+  z-index: 2;
+}
+
+.playerContainer {
+  display: flex;
+  gap: var(--spacing-xl);
+  max-width: 760px;
+  margin: 0 auto;
+  background: var(--color-surface);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-lg);
+  align-items: center;
+}
+
+/* Bagian Cover Art */
+.coverWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.coverArt {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  object-position: center 20%; /* Memfokuskan ke area wajah/atas foto potret 2016x4480 agar tampil penuh & presisi */
+  border-radius: var(--radius-full); /* Bentuk CD Bulat */
+  border: 4px solid var(--color-surface-strong);
+  box-shadow: var(--shadow-md), 0 0 0 1px var(--color-border);
+  will-change: transform;
+}
+
+.coverFallback {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, var(--color-surface-strong) 0%, var(--color-background-soft) 100%);
+  z-index: -1;
+}
+
+.rotateArt {
+  animation: spin 20s linear infinite;
+}
+
+/* Waveform Animasi */
+.waveform {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  height: 24px;
+  margin-top: var(--spacing-md);
+}
+
+.waveBar {
+  width: 3px;
+  height: 100%;
+  background-color: var(--color-primary);
+  border-radius: 2px;
+  transform-origin: bottom;
+  animation: waveBounce 1.2s ease-in-out infinite alternate;
+}
+
+.waveBar:nth-child(1) { animation-delay: 0.1s; height: 30%; }
+.waveBar:nth-child(2) { animation-delay: 0.4s; height: 60%; }
+.waveBar:nth-child(3) { animation-delay: 0.2s; height: 90%; }
+.waveBar:nth-child(4) { animation-delay: 0.6s; height: 40%; }
+.waveBar:nth-child(5) { animation-delay: 0.3s; height: 75%; }
+.waveBar:nth-child(6) { animation-delay: 0.7s; height: 50%; }
+.waveBar:nth-child(7) { animation-delay: 0.1s; height: 85%; }
+.waveBar:nth-child(8) { animation-delay: 0.5s; height: 35%; }
+.waveBar:nth-child(9) { animation-delay: 0.2s; height: 55%; }
+
+.paused .waveBar {
+  animation-play-state: paused;
+  transform: scaleY(0.25);
+  background-color: var(--color-muted);
+}
+
+/* Bagian Detail Player */
+.playerDetails {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  width: 100%;
+}
+
+.songMeta {
+  margin-bottom: var(--spacing-md);
+}
+
+.label {
+  font-family: var(--font-body);
+  font-size: var(--font-size-xs);
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+.songTitle {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-xl);
+  color: var(--color-cream);
+  margin-top: 4px;
+  font-weight: 600;
+}
+
+.songArtist {
+  font-family: var(--font-body);
+  font-size: var(--font-size-sm);
+  color: var(--color-muted);
+  margin-top: 2px;
+}
+
+/* Progress Slider */
+.progressArea {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: var(--spacing-md);
+}
+
+.progressBar {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 4px;
+  border-radius: var(--radius-full);
+  background: var(--color-surface-strong);
+  outline: none;
+  cursor: pointer;
+}
+
+.progressBar::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  box-shadow: 0 0 6px var(--color-primary);
+  transition: transform 0.1s ease;
+}
+
+.progressBar::-webkit-slider-thumb:hover {
+  transform: scale(1.3);
+}
+
+.timeInfo {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--font-size-xs);
+  color: var(--color-muted);
+  font-family: var(--font-body);
+}
+
+/* Kontrol Panel */
+.controlsArea {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+}
+
+.playPauseBtn {
+  width: 54px;
+  height: 54px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, var(--color-primary) 0%, #ff529c 100%);
+  color: var(--color-background);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(255, 126, 182, 0.3);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  border: none;
+  cursor: pointer;
+}
+
+.playPauseBtn:hover,
+.playPauseBtn:focus-visible {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(255, 126, 182, 0.5), var(--shadow-glow);
+}
+
+.playIconOffset {
+  margin-left: 3px;
+}
+
+.controlBtn {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-border);
+  color: var(--color-muted);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background var(--transition-fast), color var(--transition-fast);
+  background: transparent;
+  cursor: pointer;
+}
+
+.controlBtn:hover,
+.controlBtn:focus-visible {
+  background: rgba(255, 193, 217, 0.1);
+  color: var(--color-primary-soft);
+  border-color: var(--color-primary-soft);
+}
+
+/* Volume Slider */
+.volumeArea {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  max-width: 140px;
+  margin: 0 auto;
+}
+
+.volumeIcon {
+  color: var(--color-muted);
+}
+
+.volumeBar {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 3px;
+  border-radius: var(--radius-full);
+  background: var(--color-surface-strong);
+  outline: none;
+  cursor: pointer;
+}
+
+.volumeBar::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-muted);
+}
+
+.volumeBar::-webkit-slider-thumb:hover {
+  background: var(--color-primary-soft);
+}
+
+/* Keyframes */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes waveBounce {
+  0% {
+    transform: scaleY(0.2);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+/* Responsivitas */
+@media (max-width: 768px) {
+  .playerContainer {
+    flex-direction: column;
+    padding: var(--spacing-lg);
+    text-align: center;
+  }
+  
+  .coverArt,
+  .coverFallback {
+    width: 160px;
+    height: 160px;
+  }
+  
+  .volumeArea {
+    margin-top: var(--spacing-xs);
+  }
+}

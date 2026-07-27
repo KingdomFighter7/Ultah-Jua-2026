@@ -1,0 +1,102 @@
+.cursorContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9999999;
+  transition: opacity 300ms ease;
+}
+
+.visible {
+  opacity: 1;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+/* Kursor utama */
+.mainCursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  margin-top: -12px;
+  margin-left: -12px;
+  will-change: transform;
+  pointer-events: none;
+  transition: transform 0.05s ease-out, width 0.2s ease, height 0.2s ease;
+}
+
+.heartSvg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: var(--color-primary);
+  stroke-width: 2px;
+  filter: drop-shadow(0 0 4px var(--color-border-glow));
+  transition: fill 0.2s ease, stroke 0.2s ease, transform 0.2s ease;
+}
+
+/* Partikel trail */
+.trail {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 14px;
+  height: 14px;
+  margin-top: -7px;
+  margin-left: -7px;
+  will-change: transform;
+  pointer-events: none;
+}
+
+.trailSvg {
+  width: 100%;
+  height: 100%;
+  fill: var(--color-primary-soft);
+  opacity: 0.6;
+}
+
+/* Hovered state: saat kursor di atas link/tombol */
+.hovered .mainCursor {
+  width: 32px;
+  height: 32px;
+  margin-top: -16px;
+  margin-left: -16px;
+}
+
+.hovered .heartSvg {
+  fill: rgba(255, 126, 182, 0.35);
+  stroke: var(--color-primary-soft);
+  transform: scale(1.1);
+}
+
+/* Partikel Love yang bertebaran */
+.loveParticle {
+  position: fixed;
+  pointer-events: none;
+  font-size: var(--size);
+  color: var(--color-primary-soft);
+  text-shadow: 0 0 6px var(--color-primary);
+  opacity: 1;
+  animation: floatParticle 1s ease-out forwards;
+  z-index: 9999998;
+  user-select: none;
+  transform: translate(-50%, -50%);
+  will-change: transform, opacity;
+}
+
+@keyframes floatParticle {
+  0% {
+    transform: translate(-50%, -50%) translate(0, 0) scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) translate(var(--dx), var(--dy)) scale(0.1) rotate(var(--rot));
+    opacity: 0;
+  }
+}

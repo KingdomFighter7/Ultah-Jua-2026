@@ -1,0 +1,127 @@
+.section {
+  position: relative;
+  padding: var(--spacing-2xl) 0;
+  background-color: transparent;
+  z-index: 2;
+}
+
+.cardContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.prayerCard {
+  position: relative;
+  max-width: 640px;
+  width: 100%;
+  background: var(--color-surface);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-2xl) var(--spacing-xl);
+  box-shadow: var(--shadow-lg), 0 0 30px rgba(255, 126, 182, 0.05);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cardBorderSvg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.topSparkle {
+  color: var(--color-rose-gold);
+  margin-bottom: var(--spacing-md);
+  z-index: 2;
+}
+
+.sparkleIcon {
+  animation: sparkleRotate 4s linear infinite;
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  text-align: center;
+  z-index: 2;
+  position: relative;
+}
+
+.paragraph {
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  line-height: 1.8;
+  color: var(--color-cream);
+  margin: 0;
+}
+
+.bottomSeal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-xl);
+  width: 80%;
+  z-index: 2;
+}
+
+.sealLine {
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    var(--color-border) 50%, 
+    transparent 100%
+  );
+  flex-grow: 1;
+}
+
+.heartIcon {
+  color: var(--color-primary-soft);
+  filter: drop-shadow(0 0 6px var(--color-border-glow));
+  animation: heartPulse 1.8s infinite alternate;
+}
+
+@keyframes sparkleRotate {
+  0% {
+    transform: rotate(0deg) scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: rotate(180deg) scale(1.15);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+    opacity: 0.7;
+  }
+}
+
+@keyframes heartPulse {
+  0% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1.15);
+  }
+}
+
+/* Responsivitas */
+@media (max-width: 600px) {
+  .prayerCard {
+    padding: var(--spacing-xl) var(--spacing-md);
+  }
+  
+  .paragraph {
+    font-size: var(--font-size-sm);
+    line-height: 1.7;
+  }
+}

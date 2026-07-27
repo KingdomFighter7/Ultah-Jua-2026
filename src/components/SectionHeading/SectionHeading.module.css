@@ -1,0 +1,59 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: var(--spacing-xl);
+  position: relative;
+}
+
+.centered {
+  align-items: center;
+  text-align: center;
+}
+
+.left {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-2xl);
+  color: var(--color-cream);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+  height: 24px;
+  width: 100px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+.line {
+  height: 1px;
+  background-color: var(--color-border);
+  flex-grow: 1;
+}
+
+.heartSvg {
+  width: 12px;
+  height: 12px;
+  color: var(--color-primary);
+  flex-shrink: 0;
+  opacity: 0.8;
+}
+
+.subtitle {
+  font-family: var(--font-body);
+  font-size: var(--font-size-sm);
+  color: var(--color-muted);
+  max-width: 540px;
+  margin-top: 4px;
+  line-height: 1.5;
+}
