@@ -149,7 +149,7 @@ export const siteContent = {
         image: "/images/memory-03.webp",
         date: "21 Desember 2024",
         title: "Nonton Bioskop",
-        note: "Tebak ini dimana dut.",
+        note: "Tebak ini dimana yang.",
         alt: "Kenangan Fari dan Nazwa 3",
       },
       {
@@ -173,7 +173,7 @@ export const siteContent = {
         image: "/images/memory-06.webp",
         date: "4 Juni 2025",
         title: "Cake Anniv Tahun Pertama",
-        note: "Walau saat kita mau ambil kuenya banyak drama yang terjadi, pada akhirnya kamu tetep happy kan sayang.",
+        note: "Walau saat kita mau ambil kuenya banyak drama yang terjadi, pada akhirnya kamu tetep happy kan Sayang.",
         alt: "Kenangan Fari dan Nazwa 6",
       },
       {
@@ -195,9 +195,9 @@ export const siteContent = {
       {
         id: 9,
         image: "/images/memory-09.webp",
-        date: "September 2025",
-        title: "Menatap Masa Depan",
-        note: "Harapan-harapan indah yang kita rajut bersama.",
+        date: "19 Agustus 2025",
+        title: "Last Date Kita",
+        note: "Kamu pasti kangen banget kan sama aku kan Sayang, semoga kita bisa ketemu lagi ya Sayang.",
         alt: "Kenangan Fari dan Nazwa 9",
       },
     ],
