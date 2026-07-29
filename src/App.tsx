@@ -111,12 +111,11 @@ const MainAppContent: React.FC = () => {
                     </motion.div>
                   )}
                 </AnimatePresence>
+                {/* Floating Music Control di kanan bawah (hanya tampil setelah countdown selesai) */}
+                <FloatingMusicButton />
               </motion.div>
             )}
           </AnimatePresence>
-
-          {/* Floating Music Control di kanan bawah */}
-          <FloatingMusicButton />
         </div>
       )}
     </>
