@@ -17,7 +17,7 @@ export const siteContent = {
   },
 
   // Tanggal target ulang tahun dengan format ISO dan timezone eksplisit WIB (+07:00)
-  birthdayTarget: "2026-07-29T17:26:00+07:00",
+  birthdayTarget: "2026-07-30T00:08:00+07:00",
 
   // 2. KONTEN OPENING GATE
   openingGate: {

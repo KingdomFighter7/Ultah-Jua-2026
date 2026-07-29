@@ -26,10 +26,9 @@ const MainAppContent: React.FC = () => {
   const { hasInteractionStarted, play } = useAudio();
   const { birthdayTarget } = siteContent;
   const { isCompleted } = useCountdown(birthdayTarget);
-  const [manualUnlocked, setManualUnlocked] = useState(false);
   const [finalUnlocked, setFinalUnlocked] = useState(false);
 
-  const isSurpriseUnlocked = isCompleted || manualUnlocked;
+  const isSurpriseUnlocked = isCompleted;
 
   // Reset status locked section akhir saat restart kejutan
   React.useEffect(() => {
@@ -71,7 +70,6 @@ const MainAppContent: React.FC = () => {
           
           <CountdownSection 
             isUnlocked={isSurpriseUnlocked}
-            onUnlock={() => setManualUnlocked(true)}
           />
           
           {/* Section Kejutan (termasuk Hero ucapan ultah) hanya terbuka jika hitung mundur selesai atau di-unlock */}

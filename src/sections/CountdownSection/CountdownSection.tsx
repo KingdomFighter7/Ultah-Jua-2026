@@ -59,24 +59,6 @@ export const CountdownSection: React.FC<CountdownSectionProps> = ({
   // Hitung umur dinamis jika birthYear diisi
   const age = calculateAge(recipient.birthYear, birthdayTarget);
 
-  const handleManualUnlock = () => {
-    confetti({
-      particleCount: 100,
-      spread: 70,
-      origin: { y: 0.6 },
-      colors: ["#ff7eb6", "#ffc1d9", "#d9a0ae", "#fff7fa"],
-    });
-    onUnlock?.();
-
-    // Scroll mulus ke hero-section setelah unlock
-    setTimeout(() => {
-      const heroElement = document.getElementById("hero-section");
-      if (heroElement) {
-        heroElement.scrollIntoView({ behavior: "smooth" });
-      }
-    }, 400);
-  };
-
   return (
     <section className={styles.countdownSection} aria-label="Waktu Mundur">
       <div className="container">
@@ -128,35 +110,15 @@ export const CountdownSection: React.FC<CountdownSectionProps> = ({
                 </div>
               </div>
 
-              {/* Lock / Teaser Banner saat waktu belum tiba */}
-              {!isUnlocked ? (
-                <div className={styles.lockBanner}>
-                  <p className={styles.teaserText}>
-                    Kejutan manis disiapkan khusus untuk {recipient.nickname}{" "}
-                    dan akan terbuka otomatis
-                    <br />
-                    begitu hitungan mundur selesai pada 30 Juli 2026 00:00 WIB.
-                  </p>
-                  <button
-                    onClick={handleManualUnlock}
-                    className={styles.unlockBtn}
-                    aria-label="Buka kejutan sekarang"
-                  >
-                    <Sparkles size={16} />
-                    <span>Buka Kejutan Sekarang</span>
-                  </button>
-                </div>
-              ) : (
-                <div className={styles.lockBanner}>
-                  <div className={styles.unlockedBadge}>
-                    <Sparkles size={14} />
-                    <span>
-                      Kejutan Telah Terbuka! Scroll ke bawah ya Sayang untuk
-                      melihatnya 🌸
-                    </span>
-                  </div>
-                </div>
-              )}
+              {/* Teaser Banner saat waktu belum tiba */}
+              <div className={styles.lockBanner}>
+                <p className={styles.teaserText}>
+                  Kejutan manis disiapkan khusus untuk {recipient.nickname}{" "}
+                  dan akan terbuka otomatis
+                  <br />
+                  begitu hitungan mundur selesai pada 30 Juli 2026 00:00 WIB.
+                </p>
+              </div>
             </>
           ) : (
             <>
