@@ -26,7 +26,7 @@ export const siteContent = {
     description:
       "Sebuah kejutan kecil dari seseorang yang selalu ingin melihatmu bahagia.",
     buttonText: "Buka Kejutannya",
-    footerText: "Dari Fari, khusus untuk kamu, Sayangku Cintaku",
+    footerText: "Dari Fari, khusus untuk kamu, Sayangku Cintaku.",
   },
 
   // 3. HERO SECTION
