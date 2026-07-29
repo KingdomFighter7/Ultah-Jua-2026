@@ -44,6 +44,7 @@ export const siteContent = {
     heading: "Menuju Hari Spesial Nazwa",
     subheading: "Setiap detik membawa kita semakin dekat ke 30 Juli 2026.",
     targetReachedText: "Hari ini adalah harimu Sayang!",
+    scrollHintText: "Scroll ke bawah ya, Sayang!",
   },
 
   // 5. SURAT UTAMA UNTUK Nazwa

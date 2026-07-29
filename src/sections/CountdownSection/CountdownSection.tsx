@@ -159,16 +159,26 @@ export const CountdownSection: React.FC<CountdownSectionProps> = ({
               )}
             </>
           ) : (
-            <div className={styles.celebrationMessage}>
-              <h3 className={styles.celebrationText}>
-                {countdown.targetReachedText}
-              </h3>
-              {age !== null && (
-                <p className={styles.ageText}>
-                  Selamat Ulang Tahun yang ke-{age}, {recipient.nickname}!
-                </p>
-              )}
-            </div>
+            <>
+              <div className={styles.celebrationMessage}>
+                <h3 className={styles.celebrationText}>
+                  {countdown.targetReachedText}
+                </h3>
+                {age !== null && (
+                  <p className={styles.ageText}>
+                    Selamat Ulang Tahun yang ke-{age}, {recipient.nickname}!
+                  </p>
+                )}
+              </div>
+              <div className={styles.lockBanner}>
+                <div className={styles.unlockedBadge}>
+                  <Sparkles size={14} />
+                  <span>
+                    {countdown.scrollHintText || "Scroll ke bawah ya, Sayang!"} 🌸
+                  </span>
+                </div>
+              </div>
+            </>
           )}
         </div>
       </div>
