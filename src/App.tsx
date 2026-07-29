@@ -68,9 +68,7 @@ const MainAppContent: React.FC = () => {
           {/* Overlay Noise Grain Global */}
           <div className="grain-overlay" />
           
-          <CountdownSection 
-            isUnlocked={isSurpriseUnlocked}
-          />
+          <CountdownSection />
           
           {/* Section Kejutan (termasuk Hero ucapan ultah) hanya terbuka jika hitung mundur selesai atau di-unlock */}
           <AnimatePresence>

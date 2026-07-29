@@ -10,12 +10,10 @@ import styles from "./CountdownSection.module.css";
 
 interface CountdownSectionProps {
   onUnlock?: () => void;
-  isUnlocked?: boolean;
 }
 
 export const CountdownSection: React.FC<CountdownSectionProps> = ({
   onUnlock,
-  isUnlocked = false,
 }) => {
   const { birthdayTarget, recipient, countdown } = siteContent;
   const { days, hours, minutes, seconds, isCompleted } =
