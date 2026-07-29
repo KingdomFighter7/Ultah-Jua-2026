@@ -54,7 +54,7 @@ export const siteContent = {
     paragraphs: [
       "Selamat ulang tahun, Sayangku Cintaku yang cantik.",
       "Hari ini bukan sekadar tentang bertambahnya usia, tetapi juga tentang semua perjalanan yang sudah berhasil kamu lewati. Aku ingin kamu tahu bahwa kehadiranmu membawa banyak warna dalam hidup aku. Ada ciri khas dalam caramu berbicara, ada kehangatan dalam perhatianmu, dan ada banyak hal kecil darimu yang selalu berhasil membuatku tersenyum.",
-      "Terma kasih karena sudah menjadi Nazwa yang aku kenal: seseorang yang tulus, kuat, dan tetap berusaha bahkan ketika keadaan tidak selalu mudah. Aku mungkin tidak selalu bisa menyampaikan semuanya dengan sempurna, tetapi aku benar-benar menghargai setiap cerita, tawa, perhatian, dan waktu yang kita bagikan.",
+      "Terima kasih karena sudah menjadi Nazwa yang aku kenal: seseorang yang tulus, kuat, dan tetap berusaha bahkan ketika keadaan tidak selalu mudah. Aku mungkin tidak selalu bisa menyampaikan semuanya dengan sempurna, tetapi aku benar-benar menghargai setiap cerita, tawa, perhatian, dan waktu yang kita bagikan.",
       "Di usia barumu, aku berharap kamu semakin dekat dengan semua hal yang kamu impikan. Semoga langkahmu selalu dimudahkan, kesehatanmu dijaga, hatimu dikuatkan, dan hari-harimu dipenuhi orang-orang yang menyayangimu dengan tulus.",
       "Tetaplah menjadi Nazwa yang aku kenal. Kamu tidak harus menjadi sempurna untuk menjadi seseorang yang sangat berarti.",
       "Selamat ulang tahun, Sayang. Semoga hari ini menjadi awal dari satu tahun yang lebih indah untukmu.",
