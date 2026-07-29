@@ -108,7 +108,7 @@ export const siteContent = {
     subheading:
       "Tekan play ya Sayang, kalo kamu mau dengerin. Kalo sudah cukup, tekan lagi buat dimatiin.",
     title: "Lagu dari Fari",
-    artist: "Untuk Nazwa, dari Fari",
+    artist: "Untuk Nazwa",
     coverImage: "/images/song-cover.webp",
   },
 
@@ -197,7 +197,7 @@ export const siteContent = {
         image: "/images/memory-09.webp",
         date: "19 Agustus 2025",
         title: "Last Date Kita",
-        note: "Kamu pasti kangen banget kan sama aku kan Sayang, semoga kita bisa ketemu lagi ya Sayang.",
+        note: "Kamu pasti kangen banget sama aku kan Sayang, semoga kita bisa ketemu lagi ya Sayang.",
         alt: "Kenangan Fari dan Nazwa 9",
       },
     ],
